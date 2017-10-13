@@ -1,0 +1,142 @@
+[03-Oct-2017 11:53:09 UTC] PHP Fatal error:  Class 'App\categories' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/CategoriesController.php on line 16
+[03-Oct-2017 11:53:16 UTC] PHP Fatal error:  Class 'App\brands' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/BrandsController.php on line 23
+[03-Oct-2017 11:53:24 UTC] PHP Fatal error:  Class 'App\categories' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/CategoriesController.php on line 16
+[03-Oct-2017 12:24:04 UTC] PHP Fatal error:  Class 'App\brands' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/BrandsController.php on line 23
+[03-Oct-2017 12:25:35 UTC] PHP Fatal error:  Class 'App\brands' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/BrandsController.php on line 23
+[03-Oct-2017 14:13:11 UTC] PHP Fatal error:  Class 'App\brands' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/BrandsController.php on line 23
+[03-Oct-2017 14:14:15 UTC] PHP Fatal error:  Class 'App\categories' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/CategoriesController.php on line 16
+[05-Oct-2017 10:12:37 UTC] PHP Fatal error:  Class 'Geocode' not found in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 124
+[05-Oct-2017 10:13:09 UTC] PHP Fatal error:  Class 'Geocode' not found in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 124
+[05-Oct-2017 10:17:12 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 124
+[05-Oct-2017 10:23:34 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 124
+[05-Oct-2017 10:42:51 UTC] PHP Fatal error:  Class 'App\brands' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/BrandsController.php on line 23
+[05-Oct-2017 10:42:57 UTC] PHP Fatal error:  Class 'App\categories' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/CategoriesController.php on line 16
+[05-Oct-2017 10:43:04 UTC] PHP Fatal error:  Class 'App\listings' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/ListingsController.php on line 17
+[05-Oct-2017 10:43:49 UTC] PHP Fatal error:  Class 'App\listings' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/ListingsController.php on line 17
+[05-Oct-2017 11:44:02 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 11:45:48 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 11:47:43 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:05:24 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:10:19 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:10:22 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:10:23 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:10:58 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 29
+[05-Oct-2017 12:18:20 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[06-Oct-2017 05:20:08 UTC] PHP Fatal error:  Class 'App\Users' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/ListingsController.php on line 20
+[06-Oct-2017 05:22:07 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/e6da37c11daf350bc03e04bb0e499cf37a716f50.php on line 201
+[06-Oct-2017 06:00:21 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/e6da37c11daf350bc03e04bb0e499cf37a716f50.php on line 179
+[06-Oct-2017 06:54:53 UTC] PHP Parse error:  syntax error, unexpected 'backend' (T_STRING) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/82b7a21bed591a0499d21aa937a3de0f0662fc01.php on line 268
+[06-Oct-2017 06:55:07 UTC] PHP Parse error:  syntax error, unexpected 'backend' (T_STRING) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/82b7a21bed591a0499d21aa937a3de0f0662fc01.php on line 268
+[06-Oct-2017 07:00:44 UTC] PHP Parse error:  syntax error, unexpected '->' (T_OBJECT_OPERATOR) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/8e4bcfbde1833d53202528e9e76f51714bf3da86.php on line 206
+[06-Oct-2017 10:20:23 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1005ef3b6f7007887fec89ddefa102a9dbc04147.php on line 244
+[06-Oct-2017 10:20:33 UTC] PHP Fatal error:  Call to undefined function oldstate() in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1005ef3b6f7007887fec89ddefa102a9dbc04147.php on line 244
+[06-Oct-2017 12:20:14 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Subscriptions' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/SubscriptionsController.php on line 24
+[06-Oct-2017 12:22:50 UTC] PHP Fatal error:  Class 'Illuminate\Eloquent\Database\Model' not found in /home/caworksi/public_html/proj_weedulu/app/Subscriptions.php on line 5
+[06-Oct-2017 13:27:09 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/caworksi/public_html/proj_weedulu/storage/framework/views/7870a7af367e3c345c31a6481ab37633dcd68fec.php on line 201
+[06-Oct-2017 13:27:43 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/caworksi/public_html/proj_weedulu/storage/framework/views/7870a7af367e3c345c31a6481ab37633dcd68fec.php on line 201
+[09-Oct-2017 05:33:41 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/921b362429e01091a869253e8a7467c0bfd8807a.php on line 57
+[09-Oct-2017 06:00:20 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/caworksi/public_html/proj_weedulu/storage/framework/views/921b362429e01091a869253e8a7467c0bfd8807a.php on line 355
+[09-Oct-2017 06:00:27 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/caworksi/public_html/proj_weedulu/storage/framework/views/921b362429e01091a869253e8a7467c0bfd8807a.php on line 355
+[09-Oct-2017 06:14:21 UTC] PHP Parse error:  syntax error, unexpected end of file in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 399
+[09-Oct-2017 06:14:37 UTC] PHP Parse error:  syntax error, unexpected 'endif' (T_ENDIF) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/bbf51c9dc4dc78a2019e0a3696c696eb773cc060.php on line 195
+[09-Oct-2017 09:51:19 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/242601c697bcacc8bd75b8d6146b566e1c209923.php on line 7
+[09-Oct-2017 11:26:39 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:26:41 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:26:56 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:27:27 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:28:57 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:29:25 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 11:39:36 UTC] PHP Parse error:  syntax error, unexpected '::' (T_PAAMAYIM_NEKUDOTAYIM) in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[09-Oct-2017 12:41:56 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\ListingsController::edit() in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/ListingsController.php on line 96
+[09-Oct-2017 13:23:00 UTC] PHP Fatal error:  Call to undefined function ur() in /home/caworksi/public_html/proj_weedulu/storage/framework/views/a497a5e8a5ab00e66ebb83149e6e725378772ee3.php on line 31
+[09-Oct-2017 13:45:03 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/9196852adb5f10b184ac8be344effde7b946673a.php on line 88
+[10-Oct-2017 05:40:06 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 28
+[10-Oct-2017 05:46:23 UTC] PHP Fatal error:  Class 'App\Http\Controllers\DB' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 34
+[10-Oct-2017 05:51:15 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/921b362429e01091a869253e8a7467c0bfd8807a.php on line 102
+[10-Oct-2017 05:51:19 UTC] PHP Parse error:  syntax error, unexpected 'endforeach' (T_ENDFOREACH) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/921b362429e01091a869253e8a7467c0bfd8807a.php on line 102
+[10-Oct-2017 06:10:04 UTC] PHP Fatal error:  Call to a member function get() on array in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 46
+[10-Oct-2017 09:15:35 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 41
+[10-Oct-2017 09:20:57 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 42
+[10-Oct-2017 09:22:13 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 42
+[10-Oct-2017 09:22:39 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 39
+[10-Oct-2017 09:23:04 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 42
+[10-Oct-2017 09:33:46 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 40
+[10-Oct-2017 09:36:33 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Auth' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 40
+[10-Oct-2017 09:40:24 UTC] PHP Parse error:  syntax error, unexpected '=>' (T_DOUBLE_ARROW) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/2818fc46cd7835674c861037444e33ec83ed09b1.php on line 87
+[10-Oct-2017 09:42:58 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 09:45:10 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 09:53:05 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 10:09:57 UTC] PHP Fatal error:  Call to a member function getClientOriginalExtension() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 53
+[10-Oct-2017 10:11:03 UTC] PHP Fatal error:  Call to a member function store() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 53
+[10-Oct-2017 10:14:18 UTC] PHP Fatal error:  Call to a member function store() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 53
+[10-Oct-2017 10:25:08 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 11:18:32 UTC] PHP Fatal error:  Call to a member function getClientOriginalExtension() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 54
+[10-Oct-2017 11:21:00 UTC] PHP Fatal error:  Call to a member function getClientOriginalExtension() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 54
+[10-Oct-2017 11:21:35 UTC] PHP Fatal error:  Call to a member function move() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 55
+[10-Oct-2017 11:22:45 UTC] PHP Fatal error:  Call to a member function move() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 55
+[10-Oct-2017 11:23:50 UTC] PHP Fatal error:  Call to a member function move() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 55
+[10-Oct-2017 11:24:04 UTC] PHP Fatal error:  Call to a member function move() on null in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/HomeController.php on line 55
+[10-Oct-2017 11:24:34 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 11:27:33 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 12:41:24 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 12:50:53 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 12:51:35 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:05:33 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:10:19 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:13:08 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:19:30 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:21:54 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:25:45 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:25:50 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:26:30 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:30:08 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:32:14 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[10-Oct-2017 13:45:49 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 07:50:38 UTC] PHP Parse error:  syntax error, unexpected 'public' (T_PUBLIC) in /home/caworksi/public_html/proj_weedulu/storage/framework/views/242601c697bcacc8bd75b8d6146b566e1c209923.php on line 69
+[11-Oct-2017 09:19:08 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 12:05:59 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 13:01:01 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 13:20:56 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 13:21:20 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 13:27:20 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 14:04:08 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[11-Oct-2017 14:06:02 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 06:45:22 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 59
+[12-Oct-2017 07:00:22 UTC] PHP Fatal error:  Class 'App\Http\Controllers\View' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:00:25 UTC] PHP Fatal error:  Class 'App\Http\Controllers\View' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:00:27 UTC] PHP Fatal error:  Class 'App\Http\Controllers\View' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:00:44 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:00:45 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:01:15 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:01:19 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:01:25 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:01:31 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Route' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 80
+[12-Oct-2017 07:09:38 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 82
+[12-Oct-2017 07:10:19 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 82
+[12-Oct-2017 07:10:59 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 82
+[12-Oct-2017 10:37:26 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/9196852adb5f10b184ac8be344effde7b946673a.php on line 8
+[12-Oct-2017 10:43:07 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 11:31:03 UTC] PHP Fatal error:  Call to undefined function old_state() in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1f18fc1bf341b2579369958d8066252f31a45fda.php on line 158
+[12-Oct-2017 11:31:16 UTC] PHP Fatal error:  Call to undefined function old_state() in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1f18fc1bf341b2579369958d8066252f31a45fda.php on line 158
+[12-Oct-2017 11:49:44 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 11:49:46 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1f18fc1bf341b2579369958d8066252f31a45fda.php on line 354
+[12-Oct-2017 11:50:00 UTC] PHP Parse error:  syntax error, unexpected ':' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1f18fc1bf341b2579369958d8066252f31a45fda.php on line 354
+[12-Oct-2017 11:50:19 UTC] PHP Parse error:  syntax error, unexpected '/' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/1f18fc1bf341b2579369958d8066252f31a45fda.php on line 354
+[12-Oct-2017 11:59:55 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:04:22 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:06:24 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:12:40 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:14:07 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:16:37 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:16:58 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:17:25 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[12-Oct-2017 12:20:11 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[13-Oct-2017 04:46:14 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Response' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 81
+[13-Oct-2017 04:46:16 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Response' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/MapController.php on line 81
+[13-Oct-2017 09:37:14 UTC] PHP Parse error:  syntax error, unexpected ';' in /home/caworksi/public_html/proj_weedulu/storage/framework/views/7870a7af367e3c345c31a6481ab37633dcd68fec.php on line 79
+[13-Oct-2017 09:49:31 UTC] PHP Fatal error:  Class 'App\Http\Controllers\Profiles' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/SubscriptionsController.php on line 78
+[13-Oct-2017 10:00:20 UTC] PHP Fatal error:  Class 'App\Profile' not found in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/SubscriptionsController.php on line 79
+[13-Oct-2017 10:06:16 UTC] PHP Fatal error:  Maximum execution time of 30 seconds exceeded in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/SubscriptionsController.php on line 77
+[13-Oct-2017 11:21:46 UTC] PHP Fatal error:  Call to a member function formattedAddress() on boolean in /home/caworksi/public_html/proj_weedulu/app/Http/Controllers/WelcomeController.php on line 37
+[13-Oct-2017 11:34:20 UTC] PHP Fatal error:  Class 'Regulus\ActivityLog\ActivityLogServiceProvider' not found in /home/caworksi/public_html/proj_weedulu/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 208
+[13-Oct-2017 11:36:02 UTC] PHP Fatal error:  Class 'Regulus\ActivityLog\ActivityLogServiceProvider' not found in /home/caworksi/public_html/proj_weedulu/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php on line 208
