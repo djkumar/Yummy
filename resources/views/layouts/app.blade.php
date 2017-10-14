@@ -30,39 +30,8 @@
     <link href="{{ asset('/frontend/css/style.css') }}" rel="stylesheet">
 
 
-                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbm5j6CqocZWCUIi0LvfHcQ0WtMCaf2Dk"></script>
-            <script type="text/javascript">
-          
-   var x = document.getElementById("map_canvas");
-
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    }
-
-function showPosition(position) { 
-    console.log("Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude);
-
-  $.ajax({
-                    url: "{{ url('/getcity') }}",
-                    data:  {'lat':position.coords.latitude,'lng':+position.coords.longitude},
-                    type: 'get',
-                    datatype: 'JSON',
-                    success: function (response) {
-                          $('#city_add').html(response);
-                     
-                    },
-                    error: function (response) {
-                            $('#city_add').html(response);
-                    }
-                });
-                
-
-}
-          
-            
-            //]]>
-            </script>        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                   
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
             
 </head>
 
@@ -103,10 +72,10 @@ function showPosition(position) {
                         </div> <!-- end .col-sm-4 -->
                         <div class="col-md-2 col-sm-6">
                             <h3>Navigation</h3><ul class="footer-links"> 
-                                                        <li><a href="https://caworksite.com/Weedulu/"> DISPENSARIES</a></li>
+                                                        <li><a href="{{ url('/') }}"> DISPENSARIES</a></li>
                             <!-- <li><a href="#"> DOCTORS</a></li>
                             <li><a href="#"> PROMO VIDEO</a></li> -->
-                            <li><a href="https://caworksite.com/Weedulu/index.php/brand"> BRANDS</a></li>
+                            <li><a href="{{ url('/brand') }}"> BRANDS</a></li>
                             <!-- <li><a href="#"> THERAPEUTIC USES OF CANNIBIS </a></li>
                             <li><a href="#"> WEEDULU PROMO AD SPOT</a></li> --></ul>
                         </div> <!-- end .col-sm-4 -->
@@ -148,6 +117,6 @@ function showPosition(position) {
 
                            
 <script src='https://www.google.com/recaptcha/api.js'></script>
-        <script type="text/javascript" src="http://www.youtube.com/player_api"></script>
+        <script type="text/javascript" src="https://www.youtube.com/player_api"></script>
 
         </body></html>

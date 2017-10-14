@@ -7,7 +7,7 @@
             <div class="breadcrumbs">
                     <ul class="list-unstyled">
 
-                        <li><a href="https://caworksite.com/Weedulu/">Home</a></li>
+                        <li><a href="{{ url('/') }}">Home</a></li>
                                                                         <li>Dashboard</li>
                                                                     </ul>
                 </div> <!-- end .breadcrumbs -->                
@@ -15,7 +15,7 @@
         </div>
 
 
-        <div class="page-title" style="background-image: url('https://caworksite.com/Weedulu/images/background08.jpg');">
+        <div class="page-title" style="background-image: url('{{ url('/public/dataimages') }}/background08.jpg');">
             <div class="inner">
                                                         <h2>Dashboard</h2>
                                                  

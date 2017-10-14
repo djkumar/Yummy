@@ -1,8 +1,9 @@
 
-						     @forelse($lists as $list)
+ 
+    						     @forelse($lists as $list)
                          <div class="col-sm-4 col-lg-6">						
 							<div class="directory-item locationlist">
-							<a href="" class="store-image" title="Store Logo"><span class="number"><img src="https://caworksite.com/Weedulu/images/sponsor-dispensaries01.png" alt="icon"></span></a>
+							<a href="" class="store-image" title="Store Logo"><span class="number"><img src="{{ url('/public/dataimages') }}/sponsor-dispensaries01.png" alt="icon"></span></a>
 							<div class="storeinfo">
 									<h5><a href="{{ url('my-listings/show/'.$list->id) }}">{{ $list->listing_name }}</a></h5>
 									<p> {{ $list->city }} {{ $list->state }} </p>
@@ -21,7 +22,7 @@
 										</fieldset>(4.5)</div>
 										<div class="shop-status open">Shop: <span>Opened</span></div>
 								</div>
-							<div class="storeamenity"><img src="https://caworksite.com/Weedulu/images/locationlist-doctor.png" alt="icon"></div>
+							<div class="storeamenity"><img src="{{ url('/public/dataimages') }}/locationlist-doctor.png" alt="icon"></div>
 								 <!-- end .content -->
 								
 							</div> <!-- end .directory-item -->
@@ -30,12 +31,20 @@
                         @empty
                         @endforelse
                   
+                  
+                  <script type="text/javascript"> 
 
- <script type="text/javascript"> 
+    
+//     marker = new google.maps.Marker({
+
+// position: new google.maps.LatLng(30.8252, -119.703),
+//                 map: map,
+//                 icon: 'https://weedulu.caworksite.com/frontend/images/custom_marker.png', 
+//           });
+
+
+
                 
-      
-         
-marker=[];
   @forelse($lists as $list)
  marker = new google.maps.Marker({
      
@@ -47,11 +56,4 @@ marker=[];
             @empty
             @endforelse
 
-
-
-
-   
-
-         </script>   
-    
-    
+ </script>   

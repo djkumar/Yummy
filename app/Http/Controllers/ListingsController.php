@@ -130,7 +130,19 @@ public function userlistingadd(){
         //
 
         $listing = Listings::findOrFail($id);
+        
+       
         $listing->update($request->all());
+        
+         if($request->hasFile('listing_logo')){
+           $logo_for = $request->file('listing_logo');
+           $filename = time().'.'.$logo_for->getClientOriginalExtension();
+           $listing->listing_logo = $filename;
+           
+          $logo_for->move(public_path('/uploads/listing_logo/'), $filename);
+        $listing->update(['listing_logo' => $filename]);
+        }
+        
         return redirect()->back();
 
     }

@@ -155,13 +155,13 @@ function showPosition(position) {
                            @forelse($listings as $listing)
                                         <div class="col-xs-12">
                     
-                            <a href=" {{ url('my-listings/show/'.$listing->id) }}" class="category-box" style="background-image: url('https://caworksite.com/Weedulu/images/map.jpg');"><div class="rating">0</div>
+                            <a href=" {{ url('my-listings/show/'.$listing->id) }}" class="category-box" style="background-image: url('{{ url('/public/dataimages') }}/map.jpg');"><div class="rating">0</div>
                                 <div class="inner">                             
                                     <img src="{{ asset('/frontend/images/marker-02.png') }}" alt="icon">
-                                    <span class="number"><img src="https://caworksite.com/Weedulu/uploads/5495new.jpeg" alt="icon"></span>                                  
+                                    <span class="number"><img src=" {{ url('/public/uploads/listing_logo/'.$listing->listing_logo) }}" alt="icon" ></span>                                  
                                      <span class="location">{{ $listing->city }} </span>
                             <span class="title">{{ $listing->listing_name }} </span>
-                                                                        <span class="chat"><span title="Not Available For Chat"><img src="https://caworksite.com/Weedulu/images/chat-unavailable.png" alt="Chat"> Offline</span></span>
+                                                                        <span class="chat"><span title="Not Available For Chat"><img src="{{ url('/public/dataimages') }}/chat-unavailable.png" alt="Chat"> Offline</span></span>
                                                                     </div> <!-- end .inner -->
                             </a> <!-- end .category-box -->
                             
@@ -170,17 +170,7 @@ function showPosition(position) {
                           @empty
             @endforelse
             
-                                                    <div class="col-xs-12"> 
-            <a href="index.php/home/listdetails/Los Angeles/27" class="category-box" style="background-image: url('https://caworksite.com/Weedulu/images/map.jpg');"><div class="rating">0</div>
-                        <div class="inner">                             
-                            <img src="https://caworksite.com/Weedulu/images/marker-02.png" alt="icon">
-                            <span class="number"><img src="https://caworksite.com/Weedulu/uploads/1576download (10).jpg" alt="icon"></span>                                 
-                            <span class="location">Los Angeles</span>
-                            <span class="title">Apothecanna</span>
-                                                        <span class="chat"><span title="Not Available For Chat"><img src="https://caworksite.com/Weedulu/images/chat-unavailable.png" alt="Chat"> Offline</span></span>
-                                                    </div> <!-- end .inner -->
-                    </a> <!-- end .category-box -->
-            </div> <!-- end .col-md-3 -->
+                                                 
             <!--  </div> -->
                         </div> <!-- end .row -->
                                             <div class="text-center viewallbtn">
@@ -199,13 +189,13 @@ function showPosition(position) {
                 
            @forelse($listings as $listing)
                         <div class="col-xs-12"> 
-            <a href="{{ url('my-listings/show/'.$listing->id) }}" class="category-box" style="background-image: url('https://caworksite.com/Weedulu/images/map.jpg');"><div class="rating">0</div>
+            <a href="{{ url('my-listings/show/'.$listing->id) }}" class="category-box" style="background-image: url('{{ url('/public/dataimages') }}/map.jpg');"><div class="rating">0</div>
                         <div class="inner">                             
-                            <img src="https://caworksite.com/Weedulu/images/marker-02.png" alt="icon">
+                            <img src="{{ url('/public/dataimages') }}/marker-02.png" alt="icon">
                             <span class="number"><img src="https://caworksite.com/Weedulu/uploads/5495new.jpeg" alt="icon"></span>                                  
                             <span class="location">{{ $listing->city }} </span>
                             <span class="title">{{ $listing->listing_name }} </span>
-                                                        <span class="chat"><span title="Not Available For Chat"><img src="https://caworksite.com/Weedulu/images/chat-unavailable.png" alt="Chat"> Offline</span></span>
+                                                        <span class="chat"><span title="Not Available For Chat"><img src="{{ url('/public/dataimages') }}/chat-unavailable.png" alt="Chat"> Offline</span></span>
                                                     </div> <!-- end .inner -->
                     </a> <!-- end .category-box -->
             </div> <!-- end .col-md-3 -->
@@ -214,23 +204,7 @@ function showPosition(position) {
             
              </div> <!-- end homecategoryblock -->
             </div> <!-- end .row -->
-            <br>
-             <div class="row">
-            <div class="homecategoryblock">
-
-                            <div class="col-xs-12"> 
-            <a href="index.php/home/listdetails/Los Angeles/27" class="category-box" style="background-image: url('https://caworksite.com/Weedulu/images/map.jpg');"><div class="rating">0</div>
-                        <div class="inner">                             
-                            <img src="https://caworksite.com/Weedulu/images/marker-02.png" alt="icon">
-                            <span class="number"><img src="https://caworksite.com/Weedulu/uploads/1576download (10).jpg" alt="icon"></span>                                 
-                            <span class="location">Los Angeles</span>
-                            <span class="title">Apothecanna</span>
-                                                        <span class="chat"><span title="Not Available For Chat"><img src="https://caworksite.com/Weedulu/images/chat-unavailable.png" alt="Chat"> Offline</span></span>
-                                                    </div> <!-- end .inner -->
-                    </a> <!-- end .category-box -->
-            </div> <!-- end .col-md-3 -->
-                        </div> <!-- end homecategoryblock -->
-            </div> <!-- end .row -->
+          
 
         </div> <!-- end .container -->
     </div> <!-- end .inner -->
@@ -240,8 +214,8 @@ function showPosition(position) {
             <div class="inner">
                 <div class="container">
                 <div class="row text-center">
-                <div class="col-sm-6"><a href=""><img src="{{ asset('/frontend/images/youtube-icon.png') }}"> WEEDULU.TV ON YOUTUBE CHANNEL</a></div>
-                <div class="col-sm-6"><a href="therapeutic-cannibis.html"><img src="{{ asset('/frontend/images/therapeutic.png') }}"> THERAPEUTIC USES OF CANNIBIS</a></div>
+                <div class="col-sm-6"><a href="#"><img src="{{ asset('/frontend/images/youtube-icon.png') }}"> WEEDULU.TV ON YOUTUBE CHANNEL</a></div>
+                <div class="col-sm-6"><a href="#"><img src="{{ asset('/frontend/images/therapeutic.png') }}"> THERAPEUTIC USES OF CANNIBIS</a></div>
                 </div>
                 
                 </div>
@@ -259,10 +233,10 @@ function showPosition(position) {
                         </div> <!-- end .col-sm-4 -->
                         <div class="col-md-2 col-sm-6">
                             <h3>Navigation</h3><ul class="footer-links"> 
-                                                        <li><a href="https://caworksite.com/Weedulu/"> DISPENSARIES</a></li>
+                                                        <li><a href="{{ url('/') }}"> DISPENSARIES</a></li>
                             <!-- <li><a href="#"> DOCTORS</a></li>
                             <li><a href="#"> PROMO VIDEO</a></li> -->
-                            <li><a href="https://caworksite.com/Weedulu/index.php/brand"> BRANDS</a></li>
+                            <li><a href="{{ url('/brand') }}"> BRANDS</a></li>
                             <!-- <li><a href="#"> THERAPEUTIC USES OF CANNIBIS </a></li>
                             <li><a href="#"> WEEDULU PROMO AD SPOT</a></li> --></ul>
                         </div> <!-- end .col-sm-4 -->

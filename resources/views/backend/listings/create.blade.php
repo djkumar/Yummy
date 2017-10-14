@@ -99,7 +99,7 @@
  
 								 
 
-				<form class="smart-form" role="form" method="POST" action="{{ url('admin/listings/store') }}">
+				<form class="smart-form" role="form" method="POST" action="{{ url('admin/listings/store') }}" enctype="multipart/form-data">
 											<header>
 												Add Listings
 											</header>
@@ -118,6 +118,13 @@
                                     <input placeholder="e.g Vitae Labortis Restaurant" name="listing_tag" type="text"></label>
                               </section>
 
+        <section>
+                                                    <label class="label">Logo </label>
+                                                    <div class="input input-file">
+                                                        <span class="button"><input type="file" id="filelogo" name="listing_logo" onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include a file" readonly="">
+                                                    </div>
+                                                </section>
+                                                
                             <section>
                                     <label class="label"> Description :</label><label class="textarea">           
                                 <textarea name="listing_desc" placeholder="Description" rows="4"></textarea>
@@ -171,19 +178,23 @@
 
                            <section>
 <div id="pac-container">
-     <label>Location  :</span>
+     <label class="label">Location  :</label>
                                     <label class="input"> <input   id="pac-input" placeholder="e.g 79 Leonard St , NewYork" name="listing_location" type="text">
                              </label>
 
       </div>
                                                                            
+  </section>                                               
 
 
-<input type="text" name="latitude" id="latitude" value="">  <input type="text" name="longitude" id="longitude" value="">      
+                                   
                            <section>
+                          <div style="display:none;"> 
+
+<input type="text" name="latitude" id="latitude" value="">  <input type="text" name="longitude" id="longitude" value="">    </div>   
+                        
   <div class="google_maps" id="map"></div>
                              <div id="infowindow-content">
-      <img src="" width="16" height="16" id="place-icon">
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
 
@@ -192,25 +203,25 @@
 
 </section>
 <section>
-                                <label>PhoneNumber (optional) :</span>
+                                <label class="label">PhoneNumber (optional) :</label>
                                     <label class="input">  <input placeholder="e.g +84 0939793979" name="contact_number" type="text"> </label>
                               </section>
                            <section>
-                                    <label>Website (optional) :</span>
+                                    <label class="label">Website (optional) :</label>
                                   <label class="input">    <input placeholder="e.g https://themeforest.net/user/wecookcode/portfolio" name="website" type="text">
                               </label>
                               </section>
                            <section>
-                                    <label>Facebook Link (optional) :</span>
+                                    <label class="label">Facebook Link (optional) :</label>
                                  <label class="input">     <input placeholder="e.g yournamecompany" name="fbname" type="text"> </label>
                               </section>
                            <section>
-                                    <label>Twitter Link (optional) :</span>
+                                    <label class="label">Twitter Link (optional) :</label>
                                   <label class="input">    <input placeholder="e.g @yournamecompany" name="twittername" type="text"> </label>
 
                               </section>
                            <section>
-                                    <label>Googleplus Link (optional) :</span>
+                                    <label class="label">Googleplus Link (optional) :</label>
                                      <label class="input">  <input placeholder="e.g yournamecompany" name="gplusname" type="text"> </label>
                               </section>
 
@@ -224,29 +235,7 @@
                                                     </div>
                                                 </section>
 
-<section> 
 
-
-<div role="content">
-
-					<!-- widget edit box -->
-					<div class="jarviswidget-editbox">
-						<!-- This area used as dropdown edit box -->
-
-					</div>
-					<!-- end widget edit box -->
-
-					<!-- widget content -->
-					<div class="widget-body">
-
-						<form action="upload.php" class="dropzone dz-clickable" id="mydropzone"><div class="dz-default dz-message"><span><span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block"><span class="font-lg"><i class="fa fa-caret-right text-danger"></i> Drop files <span class="font-xs">to upload</span></span><span>&nbsp;&nbsp;<h4 class="display-inline"> (Or Click)</h4></span></span></span></span></div></form>
-
-					</div>
-					<!-- end widget content -->
-
-				</div>
-				
-				</section>
 
 
 
@@ -360,11 +349,61 @@
                                                 </section>
 
 
+		</fieldset>
+											
+											<footer>
+												<button type="submit" class="btn btn-primary">
+													Submit
+												</button>
+												<button type="button" class="btn btn-default" onclick="window.history.back();">
+													Back
+												</button>
+											</footer>
+										</form>
 
 
-                        
+
+
+   <section> 
+
+
+<div class="jarviswidget jarviswidget-color-blueLight" id="wid-id-df" data-widget-colorbutton="false" data-widget-editbutton="false" data-widget-custombutton="false" 	data-widget-togglebutton="false"
+								data-widget-deletebutton="false"
+								data-widget-fullscreenbutton="false"  >
+<header>
+					<span class="widget-icon"> <i class="fa fa-cloud"></i> </span>
+					<h2>Gallery image </h2>
+
+				</header>
+
+					<!-- widget edit box -->
+					<div class="jarviswidget-editbox">
+						<!-- This area used as dropdown edit box -->
+
+					</div>
+					<!-- end widget edit box -->
+
+					<!-- widget content -->
+					<div class="widget-body">
+
+												<form action="{{ url('admin/listings/store') }}" enctype="multipart/form-data"  class="dropzone" id="mydropzone"> {{ csrf_field() }} </form>
+
+
+					</div>
+					<!-- end widget content -->
+
+				</div>
+				
+				</section>
+				
+				
 
 	    <script>
+	    
+		
+
+
+		
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.9008896, lng: -104.4974195},
@@ -449,11 +488,7 @@
           });
         }
 
-        document.getElementById('use-strict-bounds')
-            .addEventListener('click', function() {
-              console.log('Checkbox clicked! New state=' + this.checked);
-              autocomplete.setOptions({strictBounds: this.checked});
-            });
+        
       }
 
 
@@ -470,18 +505,7 @@
       }
      
     </style>
-											</fieldset>
-											
-											<footer>
-												<button type="submit" class="btn btn-primary">
-													Submit
-												</button>
-												<button type="button" class="btn btn-default" onclick="window.history.back();">
-													Back
-												</button>
-											</footer>
-										</form>
-
+									
 										
 
 </div>
@@ -494,4 +518,26 @@
 
         </div>
         <!-- END MAIN PANEL -->
+        
+         <script src="{{ asset('/backend/js/plugin/dropzone/dropzone.min.js') }}" ></script>
+<script>
+    	 $(document).ready(function() {
+
+    
+Dropzone.autoDiscover = false;
+			$("#mydropzone").dropzone({
+				//url: "/file/post",
+				addRemoveLinks : true,
+				maxFilesize: 0.5,
+				dictDefaultMessage: '<span class="text-center"><span class="font-lg visible-xs-block visible-sm-block visible-lg-block"><span class="font-lg"><i class="fa fa-caret-right text-danger"></i> Drop files <span class="font-xs">to upload</span></span><span>&nbsp&nbsp<h4 class="display-inline"> (Or Click)</h4></span>',
+				dictResponseError: 'Error uploading file!'
+			});
+		 
+		 
+	 });
+		
+
+</script>
+
 @include('backend/adminfooter')
+ 

@@ -46,6 +46,7 @@
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: {{ $position['latitude'] }} , lng: {{ $position['longitude']  }} },
           zoom: 10, 
+
            mapTypeId: google.maps.MapTypeId.ROAD
         });
  
@@ -53,11 +54,10 @@
 
    
  map.addListener('idle', function() {
-    // 3 seconds after the center of the map has changed, pan back to the
-    // marker.
+
      window.setTimeout(function() {
          var position = map.getCenter();
-  
+   
          
     $.ajax({
         type:'POST',async:false,
@@ -82,7 +82,7 @@
             
   });
   
-  
+   
 
 @forelse($lists as $list)
  marker = new google.maps.Marker({
@@ -161,7 +161,7 @@
 						     @forelse($lists as $list)
                          <div class="col-sm-4 col-lg-6">						
 							<div class="directory-item locationlist">
-							<a href="" class="store-image" title="Store Logo"><span class="number"><img src="https://caworksite.com/Weedulu/images/sponsor-dispensaries01.png" alt="icon"></span></a>
+							<a href="" class="store-image" title="Store Logo"><span class="number"><img src="{{ url('/public/dataimages') }}/sponsor-dispensaries01.png" alt="icon"></span></a>
 							<div class="storeinfo">
 									<h5><a href="{{ url('my-listings/show/'.$list->id) }}">{{ $list->listing_name }}</a></h5>
 									<p> {{ $list->city }} {{ $list->state }} </p>
@@ -180,7 +180,7 @@
 										</fieldset>(4.5)</div>
 										<div class="shop-status open">Shop: <span>Opened</span></div>
 								</div>
-							<div class="storeamenity"><img src="https://caworksite.com/Weedulu/images/locationlist-doctor.png" alt="icon"></div>
+							<div class="storeamenity"><img src="{{ url('/public/dataimages') }}/locationlist-doctor.png" alt="icon"></div>
 								 <!-- end .content -->
 								
 							</div> <!-- end .directory-item -->
@@ -222,10 +222,10 @@
                         </div> <!-- end .col-sm-4 -->
                         <div class="col-md-2 col-sm-6">
                             <h3>Navigation</h3><ul class="footer-links"> 
-                                                        <li><a href="https://caworksite.com/Weedulu/"> DISPENSARIES</a></li>
+                                                        <li><a href="{{ url('/') }}"> DISPENSARIES</a></li>
                             <!-- <li><a href="#"> DOCTORS</a></li>
                             <li><a href="#"> PROMO VIDEO</a></li> -->
-                            <li><a href="https://caworksite.com/Weedulu/index.php/brand"> BRANDS</a></li>
+                            <li><a href="{{ url('/brand') }}"> BRANDS</a></li>
                             <!-- <li><a href="#"> THERAPEUTIC USES OF CANNIBIS </a></li>
                             <li><a href="#"> WEEDULU PROMO AD SPOT</a></li> --></ul>
                         </div> <!-- end .col-sm-4 -->
