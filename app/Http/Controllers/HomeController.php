@@ -5,7 +5,7 @@ use Illuminate\Http\Request;
 use Jcf\Geocode\Geocode;
 use App\User;
 use App\Profiles;
-use Regulus\ActivityLog\ActivityLogServiceProvider;
+use App\Subscriptions;
 class HomeController extends Controller
 {
     /**
@@ -25,8 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-
-        return view('home');
+    $profile_data = Profiles::where('userid',auth()->user()->id)->first();
+    return view('home')->with('profiles',$profile_data);
     }
     
     public function welcome()
@@ -71,5 +71,17 @@ class HomeController extends Controller
     }
     
     
+    public function pricingplan(){ 
+    $profile_data = Profiles::where('userid',auth()->user()->id)->first();
+$subscription_plans = Subscriptions::get();
+     return view('pricing-plan')->with('profiles',$profile_data)->with('subscription_plans',$subscription_plans);
+     
+    }
+    public function pricingplan_buy($request){ 
+
+            $profile_data = Profiles::where('userid',auth()->user()->id)->first();
+$subscription_plans = Subscriptions::where('id',$request)->first();
+     return view('pricing-plan-buy')->with('profiles',$profile_data)->with('subscription_plans',$subscription_plans);
+    }
     
 }

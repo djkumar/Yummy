@@ -7,6 +7,8 @@ use App\Listings;
 use App\User;
 use App\States;
 use App\Categories;
+use App\Profiles;
+use App\Listingsreviews;
 class ListingsController extends Controller
 {
     /**
@@ -16,9 +18,9 @@ class ListingsController extends Controller
      */
     public function index()
     {
-        //
+
       //  $listings = listings::get();
-         //       return view('backend.listings.index')->withListings($listings);
+      //       return view('backend.listings.index')->withListings($listings);
 $users = User::orderBy('created_at', 'desc')->get();
 
 	 return view('backend.listings.index')->withUsers($users); 
@@ -29,9 +31,9 @@ $users = User::orderBy('created_at', 'desc')->get();
         //
                 $this->middleware('auth');
 
-        $listings = listings::where('created_by',\Auth::user()->id)->get();
-       
-                return view('frontendlistings.index')->with('listings', $listings);
+        $listings = listings::where('created_by',\Auth::user()->id)->simplePaginate(8);
+       $profiles = Profiles::where('userid',\Auth::user()->id)->first();
+                return view('frontendlistings.index')->with('listings', $listings)->with('profiles',$profiles);
 
     }
 
@@ -50,10 +52,10 @@ $users = User::orderBy('created_at', 'desc')->get();
     }
 
 public function userlistingadd(){ 
-    
+    $profiles = Profiles::where('userid',\Auth::user()->id)->first();
       $states = States::get();
         $categories= Categories::get();
-        return view('frontendlistings.create')->withStates($states)->withCategories($categories);
+        return view('frontendlistings.create')->withStates($states)->withCategories($categories)->with('profile',$profiles);
 }
     /**
      * Store a newly created resource in storage.
@@ -66,14 +68,31 @@ public function userlistingadd(){
         
           $this->validate($request, [
         'listing_name' => 'required|max:255',
-        'listing_desc' => 'required' /*'city' => 'required|max:255',
-        'zipcode' => 'required', 'contact_number' => 'required|max:255',
-        'listing_desc' => 'required', 'listing_name' => 'required|max:255',
-        'listing_desc' => 'required',*/
+        'listing_desc' => 'required',
+        'listing_category' => 'required',
+        'city' => 'required|max:255',
+        'country' => 'required', 'state' => 'required|max:255',
+        'address' => 'required', 'zipcode' => 'required|max:255',
+         'end_time' => 'required|max:255',
+         'emailaddress'=>'required',
+        'start_time' => 'required', 'start_day' => 'required|max:255',
+        'end_day' => 'required',
     ]);
     
         //
-        listings::create($request->all());
+       if( listings::create($request->all())) {
+                         $request->session()->flash('success', 'Added successfully!');
+
+       }
+          if($request->hasFile('listing_logo')){
+           $logo_for = $request->file('listing_logo');
+           $filename = time().'.'.$logo_for->getClientOriginalExtension();
+           $listing->listing_logo = $filename;
+           
+          $logo_for->move(public_path('/uploads/listing_logo/'), $filename);
+        $listing->update(['listing_logo' => $filename]);
+        }
+        
         return  redirect()->back();
 
 
@@ -113,8 +132,9 @@ public function userlistingadd(){
          $states = States::get();
         $categories= Categories::get();
         $listing = Listings::find($id);
+    $profiles = Profiles::where('userid',\Auth::user()->id)->first();
 
-        return view('frontendlistings/edit')->withListing($listing)->withStates($states)->withCategories($categories);
+        return view('frontendlistings/edit')->withListing($listing)->withStates($states)->withCategories($categories)->with('profile',$profiles);
         
     }
 
@@ -132,11 +152,28 @@ public function userlistingadd(){
         $listing = Listings::findOrFail($id);
         
        
-        $listing->update($request->all());
+         $this->validate($request, [
+        'listing_name' => 'required|max:255',
+        'listing_desc' => 'required',
+        'listing_category' => 'required',
+        'city' => 'required|max:255',
+        'country' => 'required', 'state' => 'required|max:255',
+        'address' => 'required', 'zipcode' => 'required|max:255',
+         'end_time' => 'required|max:255',
+         'emailaddress'=>'required',
+        'start_time' => 'required', 'start_day' => 'required|max:255',
+        'end_day' => 'required',
+    ]);
+    
+    
+        if($listing->update($request->all())){
+              $request->session()->flash('success', 'Updated successfully!');
+
+        }
         
          if($request->hasFile('listing_logo')){
            $logo_for = $request->file('listing_logo');
-           $filename = time().'.'.$logo_for->getClientOriginalExtension();
+           $filename = 'listing_'.$id.'.'.$logo_for->getClientOriginalExtension();
            $listing->listing_logo = $filename;
            
           $logo_for->move(public_path('/uploads/listing_logo/'), $filename);
@@ -162,8 +199,10 @@ public function userlistingadd(){
               $states = States::get();
         $categories= Categories::get();
         $listing = Listings::find($id);
+ $listing_reviews = Listingsreviews::Where('listing_id',$id)->join('profiles', 'listings_reviews.created_by', '=', 'profiles.userid')->get();
 
-        return view('frontendlistings/show')->withListing($listing)->withStates($states)->withCategories($categories);
+
+        return view('frontendlistings/show')->withListing($listing)->withStates($states)->withCategories($categories)->with('user', @\Auth::user())->with('listingreviews',@$listing_reviews);
     }
         
 }

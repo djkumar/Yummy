@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>test</title>
+        <title>{{ config('app.name') }}</title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -37,71 +37,47 @@
 
 <link href="{{ asset('/frontend/css/bootstrap-select.min.css') }}" rel="stylesheet">
 <link href="{{ asset('/frontend/css/style.css') }}" rel="stylesheet">
-
-
-
+ 
+ 
+ <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbm5j6CqocZWCUIi0LvfHcQ0WtMCaf2Dk&libraries=places&callback=initMap"
+  type="text/javascript"></script> 
             <script type="text/javascript">
-                
               function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: {{ $position['latitude'] }} , lng: {{ $position['longitude']  }} },
-          zoom: 10, 
-
+          zoom: 11, 
            mapTypeId: google.maps.MapTypeId.ROAD
         });
- 
- 
-
-   
- map.addListener('idle', function() {
-
+ map.addListener('dragend', function() {
      window.setTimeout(function() {
-         var position = map.getCenter();
-   
-         
+    var position = map.getCenter();
     $.ajax({
-        type:'POST',async:false,
+        type:'POST',async:false, 
         url:'{{ url("/ajaxmaps") }}',
         data: {
         "_token": "{{ csrf_token() }}",
         "latitude":position.lat(),
         "longitude":position.lng(),
         } ,
-        success:function(data) { 
-           //  var point = ;
+        success:function(data) {
            $('.listpage-style01').html(data);
-            
     }
-        
-    })
-    }, 2000);
-    
-    
-   
-            
-            
+    });
+    }, 3000);        
   });
-  
-   
 
-@forelse($lists as $list)
- marker = new google.maps.Marker({
-     
-                position: new google.maps.LatLng({{ $list->latitude }}, {{ $list->longitude  }}),
-                map: map,
-                icon: '{{ asset('frontend/images/custom_marker.png') }}', 
-                
-            });
-            @empty
-            @endforelse 
-      }
-
-
-         </script>   
+@forelse($lists as $listsall)
+marker = new google.maps.Marker({ position: new google.maps.LatLng({{$listsall->latitude}},{{$listsall->longitude}}),
+map:map,
+icon: "{{ asset('frontend/images/custom_marker.png') }}", 
+  });
+@empty
+@endforelse
+}
+ </script>   
     
         
- <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAbm5j6CqocZWCUIi0LvfHcQ0WtMCaf2Dk&callback=initMap"
-  type="text/javascript"></script> 
+
 
 </head>
 <body class="home">     
@@ -141,8 +117,6 @@
  <div id="map"  style="width:100%; height:100%;" ></div> 
  </div> <!-- end .left -->
 <div class="right">
-
-
 	<div class="inner" style="overflow: hidden;" tabindex="0">
 		
 		<div class="directory-tags hide">
@@ -197,7 +171,7 @@
 		</div>
 		
         <div class="section light">
-           
+    
  
         <div class="section light lastsection">
             <div class="inner">

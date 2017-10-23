@@ -89,29 +89,9 @@
 				
 											<div class="row">
 				
-												<div class="col-sm-4">
+												
 				
-													<div class="input-group">
-														<input class="form-control" type="text" placeholder="Type invoice number or date...">
-														<div class="input-group-btn">
-															<button class="btn btn-default" type="button">
-																<i class="fa fa-search"></i> Search
-															</button>
-														</div>
-													</div>
-												</div>
-				
-												<div class="col-sm-8 text-align-right">
-				
-													<div class="btn-group">
-														<a href="javascript:void(0)" class="btn btn-sm btn-primary"> <i class="fa fa-edit"></i> Edit </a>
-													</div>
-				
-													<div class="btn-group">
-														<a href="javascript:void(0)" class="btn btn-sm btn-success"> <i class="fa fa-plus"></i> Create New </a>
-													</div>
-				
-												</div>
+											
 				
 											</div>
 				

@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => env('APP_NAME', 'Laravel'),
+    'name' => env('APP_NAME', 'Weedulu'),
 
     /*
     |--------------------------------------------------------------------------
@@ -176,9 +176,8 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-       
-
-
+        Jcf\Geocode\GeocodeServiceProvider::class,
+     //    Aginev\LoginActivity\LoginActivityServiceProvider::class
     ],
 
     /*
@@ -228,7 +227,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Geocode' => Jcf\Geocode\Facades\Geocode::class,
-        'Activity' => Regulus\ActivityLog\Models\Activity::class,
 
 
     ],

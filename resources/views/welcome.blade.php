@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>test</title>
+        <title>{{ config('app.name') }} </title>
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
@@ -174,7 +174,7 @@ function showPosition(position) {
             <!--  </div> -->
                         </div> <!-- end .row -->
                                             <div class="text-center viewallbtn">
-                        <a href="index.php/home/allcategory/Los Angeles" class="button">view all</a>
+                        <a href="{{ url('/maps') }}" class="button">view all</a>
                     </div> <!-- end .text-center -->
                 </div> <!-- end .container -->
             </div> <!-- end .inner -->
@@ -236,7 +236,7 @@ function showPosition(position) {
                                                         <li><a href="{{ url('/') }}"> DISPENSARIES</a></li>
                             <!-- <li><a href="#"> DOCTORS</a></li>
                             <li><a href="#"> PROMO VIDEO</a></li> -->
-                            <li><a href="{{ url('/brand') }}"> BRANDS</a></li>
+                            <li><a href="{{ url('/') }}"> BRANDS</a></li>
                             <!-- <li><a href="#"> THERAPEUTIC USES OF CANNIBIS </a></li>
                             <li><a href="#"> WEEDULU PROMO AD SPOT</a></li> --></ul>
                         </div> <!-- end .col-sm-4 -->
@@ -391,18 +391,7 @@ function showPosition(position) {
              return true;
          }  
       }
-     
- /*   $('#mylocation').change(function(){
-      
-      document.forms.locationform.submit();
 
-     });
-     function location_submit()
-     {
-       var p=document.getElementById('mylocation').value;
-       document.forms.locationform.submit();
-     }
-*/
        
    </script>
 

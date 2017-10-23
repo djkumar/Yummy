@@ -31,8 +31,8 @@
                 <div class="box myaccount2colmenu">
                 <div class="row">
                 <div class="col-sm-12 text-center userinfo">
-                <img src="https://caworksite.com/Weedulu/uploads/7181images1.jpeg" alt="avatar">
-                <span>Userfive</span>
+                <img src="{{ url('public/uploads/avatar/'.$profile->user_avatar) }}" alt="avatar">
+                <span> {{ $profile->first_name }} </span>
                 </div>
                 </div> 
                     
@@ -50,10 +50,10 @@
                                                                 
                     </ul>
                 </div> 
-                </div>      <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+                </div>      <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <style type="text/css">
 a.previous { display: none; }
 .demo { width:960px; margin:50px auto;}
@@ -77,17 +77,24 @@ h3 {
 table tr:nth-child(-n+0) { display: table-row; }
 
 </style>
-<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <div class="col-sm-9"> 
 <div class="box">
 
 
-				<form class="add-listing-form light-inputs" role="form" method="POST" action="{{ url('admin/listings/update', $listing->id) }}">
+				<form class="add-listing-form light-inputs" role="form" method="POST" action="{{ url('admin/listings/update', $listing->id) }}" enctype="multipart/form-data">
 										
 
                       {{ csrf_field() }}
                       
+                      @if (session('success'))
+    <div class="flash-message">
+    <div class="alert alert-success"> <i class="fa fa-check"></i>
+ Updated Successfully     </div>
+    </div>
+@endif
+
                       <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon">Listing Name :</span>
@@ -96,26 +103,45 @@ table tr:nth-child(-n+0) { display: table-row; }
 							</div>
 							
 							
+                        	@if($errors)
+                      {{ $errors->first('listing_name') }} 
+                       @endif
                         
 
                              <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon"> Tagline (optional) :</span>
-                                    <input placeholder="e.g Vitae Labortis Restaurant" name="listing_tag" type="text" value=" {{ $listing->listing_tag }} ">
+								<span class="input-group-addon">Tagline (optional) :</span>
+                                    <input placeholder="e.g Vitae Labortis Restaurant" name="listing_tag" type="text" value="{{ $listing->listing_tag }}">
                               </div>
                               </div>
 
+
+  <div class="form-group">
+								<div class="input-group">
+								<span class="input-group-addon">Listing Logo :</span>
+									    
+                                           <input type="file" id="file" name="listing_logo" onchange="this.parentNode.nextSibling.value = this.value">
+                                                   
+								</div> <!-- end .input-group --> 
+                                                    <img src="{{ url('public/uploads/listing_logo/'.$listing->listing_logo) }}" style="width:200px;" /> 
+                                                    </div>
+							
+							
                              <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon">  Description :</span>         
-                                <textarea name="listing_desc" placeholder="Description" rows="4"> {{ $listing->listing_desc }} </textarea>
+								<span class="input-group-addon">Description :</span>         
+                                <textarea name="listing_desc" placeholder="Description" rows="4">{{ $listing->listing_desc }} </textarea>
                           </div>
                               </div>
 
+	 @if($errors)
+                      {{ $errors->first('listing_desc') }} 
+                       @endif
+                       
                           <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon"> Listing category :</span>
-                                   <select name="listing_category"> <option value=""> Select </option>
+								<span class="input-group-addon">Listing category :</span>
+                                   <select name="listing_category"><option value=""> Select </option>
                                        @foreach($categories as $category)
                <option value="{{ $category->id }}"  {{ old('listing_category',$category->id)==$listing->listing_category?'selected':''  }} > {{ $category->category_name }} </option>
             @endforeach
@@ -124,16 +150,21 @@ table tr:nth-child(-n+0) { display: table-row; }
                                   </div>
                               </div>
 
-
+	 @if($errors)
+                      {{ $errors->first('listing_category') }} 
+                       @endif
 
                         <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon"> Address :</span>    
+								<span class="input-group-addon">Address :</span>    
                                     <input placeholder="e.g Vitae Labortis Restaurant" name="address" type="text" value="{{ $listing->address }}">              
                                     
                               </div>
                               </div>
-                              
+                               	 @if($errors)
+                      {{ $errors->first('address') }} 
+                       @endif
+                       
                                                          <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Country :</span>    
@@ -146,7 +177,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                               </div>
                               </div>
                               
-
+	 @if($errors)
+                      {{ $errors->first('country') }} 
+                       @endif
                            <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon">  State :</span>    
@@ -158,6 +191,10 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
+                                	 @if($errors)
+                      {{ $errors->first('state') }} 
+                       @endif
+                       
                            <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> City :</span>    
@@ -165,6 +202,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
+                              	 @if($errors)
+                      {{ $errors->first('city') }} 
+                       @endif
                                                          <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Zipcode :</span>    
@@ -172,6 +212,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div> 
+	 @if($errors)
+                      {{ $errors->first('zipcode') }} 
+                       @endif  
 
 
                       <div class="form-group">
@@ -197,32 +240,41 @@ table tr:nth-child(-n+0) { display: table-row; }
 
  <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon"> PhoneNumber (optional) :</span>
-                                     <input placeholder="e.g +84 0939793979" name="contact_number" type="text" value=" {{ $listing->contact_number }} " >   </div>
+								<span class="input-group-addon"> Email Address :</span>
+                                     <input placeholder="e.g user@mail.com" name="emailaddress" type="text" value="{{ $listing->emailaddress }}" >   </div>
+                              </div>
+                             	 @if($errors)
+                      {{ $errors->first('emailaddress') }} 
+                       @endif   
+                       
+ <div class="form-group">
+								<div class="input-group">
+								<span class="input-group-addon">PhoneNumber (optional) :</span>
+                                     <input placeholder="e.g +84 0939793979" name="contact_number" type="text" value="{{ $listing->contact_number }}" >   </div>
                               </div>
 
                           <div class="form-group">
 								<div class="input-group">
-								<span class="input-group-addon"> Website (optional) :</span>
-                                <input placeholder="e.g https://themeforest.net/user/wecookcode/portfolio" name="website" type="text" value=" {{ $listing->website }} ">  </div>
+								<span class="input-group-addon">Website (optional) :</span>
+                                <input placeholder="e.g https://themeforest.net/user/wecookcode/portfolio" name="website" type="text" value="{{ $listing->website }}">  </div>
                               </div>
  
                             <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Facebook Link (optional) :</span>
-                              <input placeholder="e.g yournamecompany" name="fbname" type="text" value=" {{ $listing->fbname }} ">  </div>
+                              <input placeholder="e.g yournamecompany" name="fbname" type="text" value="{{ $listing->fbname }}">  </div>
                               </div>
  
                             <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Twitter Link (optional) :</span>
-                                    <input placeholder="e.g @yournamecompany" name="twittername" type="text" value=" {{ $listing->twittername }} ">  </div>
+                                    <input placeholder="e.g @yournamecompany" name="twittername" type="text" value="{{ $listing->twittername }}">  </div>
                               </div>
 
                              <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Googleplus Link (optional) :</span>
-                                       <input placeholder="e.g yournamecompany" name="gplusname" type="text" value=" {{ $listing->gplusname }} ">  </div>
+                                       <input placeholder="e.g yournamecompany" name="gplusname" type="text" value="{{ $listing->gplusname }}">  </div>
                               </div>
 
 
@@ -260,6 +312,9 @@ table tr:nth-child(-n+0) { display: table-row; }
 <option value="Sunday" {{ old('start_day', $listing->start_day)=='Sunday'?'selected':'' }}>Sunday</option>
                                                         </select> <i></i>  </div>
                               </div>
+	 @if($errors)
+                      {{ $errors->first('start_day') }} 
+                       @endif  
 
 
 
@@ -280,6 +335,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                               </div>
 
 
+	 @if($errors)
+                      {{ $errors->first('end_day') }} 
+                       @endif 
 
                                                <div class="form-group">
 								<div class="input-group">
@@ -314,7 +372,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                                         </select> <i></i>  </div>
                               </div>
 
-
+	 @if($errors)
+                      {{ $errors->first('start_time') }} 
+                       @endif  
 
   <div class="form-group">
 								<div class="input-group">
@@ -348,6 +408,10 @@ table tr:nth-child(-n+0) { display: table-row; }
         <option value="11:30 pm" {{ old('end_time', $listing->end_time)=='11:30 pm'?'selected':'' }}>11:30 pm</option>
                                                         </select> <i></i>  </div>
                               </div>
+                              	 @if($errors)
+                      {{ $errors->first('end_time') }} 
+                       @endif  
+                       
 <input type="hidden" name="created_by" value="{{ Auth::user()->id }}"> 
 
 <div class="submit"> 
@@ -362,7 +426,7 @@ table tr:nth-child(-n+0) { display: table-row; }
     
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 35.9008896, lng: -104.4974195},
+          center: {lat:{{ $listing->latitude }}, lng:{{ $listing->longitude}}},
           zoom: 5, 
          
         });
@@ -385,9 +449,9 @@ table tr:nth-child(-n+0) { display: table-row; }
         infowindow.setContent(infowindowContent);
         var marker = new google.maps.Marker({
 
-           position:new google.maps.LatLng{{ $listing->latlng }},
+          position:new google.maps.LatLng({{ $listing->latitude }} , {{ $listing->longitude }}),
           map: map,
-           draggable: true,
+          draggable: true,
           animation: google.maps.Animation.DROP,
           anchorPoint: new google.maps.Point(0, -29)
         });

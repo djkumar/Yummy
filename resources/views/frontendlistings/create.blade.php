@@ -31,8 +31,8 @@
                 <div class="box myaccount2colmenu">
                 <div class="row">
                 <div class="col-sm-12 text-center userinfo">
-                <img src="https://caworksite.com/Weedulu/uploads/7181images1.jpeg" alt="avatar">
-                <span>Userfive</span>
+                <img src="{{ url('public/uploads/avatar/'.$profile->user_avatar) }}" alt="avatar">
+                <span> {{ $profile->first_name }}</span>
                 </div>
                 </div> 
                     
@@ -50,10 +50,10 @@
                                                                 
                     </ul>
                 </div> 
-                </div>      <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
+                </div>      <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-  <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
+  <script src="https://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
   <style type="text/css">
 a.previous { display: none; }
 .demo { width:960px; margin:50px auto;}
@@ -77,15 +77,20 @@ h3 {
 table tr:nth-child(-n+0) { display: table-row; }
 
 </style>
-<link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 
 <div class="col-sm-9"> 
 <div class="box">
 
 
-				<form class="add-listing-form light-inputs" role="form" method="POST" action="{{ url('admin/listings/store') }}">
+				<form class="add-listing-form light-inputs" role="form" method="POST" action="{{ url('admin/listings/store') }}" >
 										
-
+  @if (session('success'))
+    <div class="flash-message">
+    <div class="alert alert-success"> <i class="fa fa-check"></i>
+ Added Successfully     </div>
+    </div>
+@endif
                       {{ csrf_field() }}
                      
                      
@@ -107,7 +112,14 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     <input placeholder="e.g Vitae Labortis Restaurant" name="listing_tag" type="text" value="">
                               </div>
                               </div>
-
+  <div class="form-group">
+								<div class="input-group">
+								<span class="input-group-addon">Listing Logo :</span>
+									    
+                                           <input type="file" id="file" name="listing_logo" onchange="this.parentNode.nextSibling.value = this.value">
+                                                   
+								</div> <!-- end .input-group -->
+							</div>
                              <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon">  Description :</span>         
@@ -115,7 +127,7 @@ table tr:nth-child(-n+0) { display: table-row; }
                           </div>
                               </div>
 	 @if($errors)
-                      {{ $errors->first('listing_description') }} 
+                      {{ $errors->first('listing_desc') }} 
                        @endif
                           <div class="form-group">
 								<div class="input-group">
@@ -129,6 +141,11 @@ table tr:nth-child(-n+0) { display: table-row; }
                                   </div>
                               </div>
 
+	 @if($errors)
+                      {{ $errors->first('listing_category') }} 
+                       @endif
+                       
+                       
                            <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Address :</span>    
@@ -136,6 +153,10 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
+                              	 @if($errors)
+                      {{ $errors->first('address') }} 
+                       @endif
+                       
                               
                                                          <div class="form-group">
 								<div class="input-group">
@@ -148,7 +169,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
-                              
+                              	 @if($errors)
+                      {{ $errors->first('country') }} 
+                       @endif
 
                            <div class="form-group">
 								<div class="input-group">
@@ -161,6 +184,10 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
+                               	 @if($errors)
+                      {{ $errors->first('state') }} 
+                       @endif
+                       
                            <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> City :</span>    
@@ -168,6 +195,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
+                               	 @if($errors)
+                      {{ $errors->first('city') }} 
+                       @endif
                                                          <div class="form-group">
 								<div class="input-group">
 								<span class="input-group-addon"> Zipcode :</span>    
@@ -175,7 +205,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                     
                               </div>
                               </div>
-                              
+                            	 @if($errors)
+                      {{ $errors->first('zipcode') }} 
+                       @endif  
 
                       <div class="form-group">
 								<div class="input-group">
@@ -196,6 +228,15 @@ table tr:nth-child(-n+0) { display: table-row; }
       <span id="place-name"  class="title"></span><br>
       <span id="place-address"></span>
     </div>
+    
+     <div class="form-group">
+								<div class="input-group">
+								<span class="input-group-addon"> Email Address :</span>
+                                     <input placeholder="e.g user@mail.com" name="emailaddress" type="text" value="" >   </div>
+                              </div>
+                             	 @if($errors)
+                      {{ $errors->first('emailaddress') }} 
+                       @endif   
 
  <div class="form-group">
 								<div class="input-group">
@@ -264,7 +305,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                               </div>
 
 
-
+	 @if($errors)
+                      {{ $errors->first('start_day') }} 
+                       @endif  
 
                                                 <div class="form-group">
 								<div class="input-group">
@@ -281,7 +324,9 @@ table tr:nth-child(-n+0) { display: table-row; }
                                                         </select> <i></i>  </div>
                               </div>
 
-
+	 @if($errors)
+                      {{ $errors->first('end_day') }} 
+                       @endif  
 
                                                <div class="form-group">
 								<div class="input-group">
@@ -315,7 +360,9 @@ table tr:nth-child(-n+0) { display: table-row; }
 <option value="11:30 am"  >11:30      am</option>
                                                         </select> <i></i>  </div>
                               </div>
-
+	 @if($errors)
+                      {{ $errors->first('start_time') }} 
+                       @endif  
 
 
   <div class="form-group">
@@ -350,7 +397,9 @@ table tr:nth-child(-n+0) { display: table-row; }
         <option value="11:30 pm"  >11:30 pm</option>
                                                         </select> <i></i>  </div>
                               </div>
-
+	 @if($errors)
+                      {{ $errors->first('end_time') }} 
+                       @endif  
 <input type="hidden" name="created_by" value="{{ Auth::user()->id }}"> 
 
 <div class="submit"> 

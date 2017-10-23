@@ -17,6 +17,10 @@ Route::get('/getcity', 'WelcomeController@getcity');
 Route::get('/maps','MapController@index');
 Route::post('/maps','MapController@homesearch');
 Route::post('/ajaxmaps','MapController@ajaxsearch');
+Route::post('/contactform/store','ContactformController@store');
+Route::post('/reviewform/store','ListingsreviewsController@store');
+Route::get('/brands','BrandsController@userindex' )->name('brands.index');
+
 
 Auth::routes();
 
@@ -32,7 +36,9 @@ Route::get('/my-listings/add','ListingsController@userlistingadd' );
 Route::get('/my-listings/show/{id}','ListingsController@showlisting' );
 
 
-Route::get('/pricing-plans','HomeController@index' );
+Route::get('/pricing-plans','HomeController@pricingplan' );
+Route::get('/pricing-plans/buy/{id}','HomeController@pricingplan_buy' );
+
 //admin route for our multi-auth system
 Route::post('/saveprofile', 'HomeController@saveprofile');
 

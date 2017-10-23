@@ -16,6 +16,17 @@
     <link href="{{ asset('/frontend/css/bootstrap.min.css') }}" rel="stylesheet">
 
 
+  <link href="{{ asset('/frontend/fonts/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet">
+        <!-- PE Icon 7 Stoke -->
+        <link href="{{ asset('/frontend/fonts/pe-icon-7-stroke/css/pe-icon-7-stroke.css') }}" rel="stylesheet">
+        <link href="{{ asset('/frontend/fonts/pe-icon-7-stroke/css/helper.css') }}" rel="stylesheet">
+        <!-- PE Icon Social -->
+        <link href="{{ asset('/frontend/fonts/pe-icon-social/css/pe-icon-social.css') }}" rel="stylesheet">
+        <link href="{{ asset('/frontend/fonts/pe-icon-social/css/helper.css') }}" rel="stylesheet">
+        <!-- Quicksand Dash -->
+        <link href="{{ asset('/frontend/fonts/quicksand-dash/stylesheet.css') }}" rel="stylesheet">
+        
+
     <link href="{{ asset('/frontend/css/owl.carousel.css') }}" rel="stylesheet">
     <link href="{{ asset('/frontend/css/owl.theme.default.css') }}" rel="stylesheet">
     <link href="{{ asset('/frontend/css/sweetalert.css') }}" rel="stylesheet">
@@ -75,7 +86,7 @@
                                                         <li><a href="{{ url('/') }}"> DISPENSARIES</a></li>
                             <!-- <li><a href="#"> DOCTORS</a></li>
                             <li><a href="#"> PROMO VIDEO</a></li> -->
-                            <li><a href="{{ url('/brand') }}"> BRANDS</a></li>
+                            <li><a href="{{ url('/') }}"> BRANDS</a></li>
                             <!-- <li><a href="#"> THERAPEUTIC USES OF CANNIBIS </a></li>
                             <li><a href="#"> WEEDULU PROMO AD SPOT</a></li> --></ul>
                         </div> <!-- end .col-sm-4 -->
@@ -99,6 +110,21 @@
             <div class="bottom">Copyright &copy; 2017, Weedulu. All Rights Reserved</div>
         </footer> <!-- end .footer -->
 
+
+<div class="login-wrapper">
+            <div class="login">
+                @include('auth.login')
+            </div> <!-- end .login -->
+        </div>
+
+
+<div class="signup-wrapper">
+            <div class="signup">
+
+@include('auth.register')
+
+            </div>
+        </div>
 
         <script type="text/javascript"  src="{{ asset('/frontend/js/jquery-3.1.0.min.js') }}"></script>
                 <script type="text/javascript"  src="{{ asset('/frontend/js/bootstrap.min.js') }}"></script>

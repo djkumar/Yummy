@@ -15,7 +15,7 @@ class Profiles extends Authenticatable
      * @var array
      */
     protected $fillable = [ 
-        'userid','first_name','last_name','user_avatar', 'address','city','zipcode', 'fbname','twittername','gplusname','instaname', 'country','company_name','phone_number'
+        'userid','first_name','last_name','user_avatar', 'address','city','zipcode', 'fbname','twittername','gplusname','instaname','state', 'country','company_name','phone_number'
     ];
 
    

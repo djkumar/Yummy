@@ -143,16 +143,28 @@
 								</div> <!-- end .input-group -->
 							</div> <!-- end .form-group -->
 							<div class="row">
-								<div class="col-sm-4">
+								<div class="col-sm-6">
 									<div class="form-group">
 										<div class="input-group">
 											<span class="input-group-addon">Town / City * :</span>
 											<input placeholder="e.g NewYork" name="city" value="{{ $profile->city }}" type="text">
 										</div> <!-- end .input-group -->
 									</div> <!-- end .form-group -->
-
+								
 								</div> <!-- end .col-sm-4 -->
-								<div class="col-sm-4">
+								
+
+	<div class="col-sm-6">
+									<div class="form-group">
+										<div class="input-group">
+											<span class="input-group-addon">State * :</span>
+											<input placeholder="e.g CA" name="state" value="{{ $profile->state }}" type="text">
+										</div> <!-- end .input-group -->
+									</div> <!-- end .form-group -->
+								</div> <!-- end .col-sm-4 -->
+								</div>
+									<div class="row">
+								<div class="col-sm-6">
 									<div class="form-group">
 										<div class="input-group">
 											<span class="input-group-addon">Country * :</span>
@@ -160,10 +172,10 @@
 										</div> <!-- end .input-group -->
 									</div> <!-- end .form-group -->
 								</div> <!-- end .col-sm-4 -->
-								<div class="col-sm-4">
+								<div class="col-sm-6">
 									<div class="form-group">
 										<div class="input-group">
-							<span class="input-group-addon">Postcode * :</span>
+							<span class="input-group-addon">Zipcode * :</span>
 				<input placeholder="e.g 10001" name="zipcode" value="{{ $profile->zipcode }}" type="text">
 										</div> <!-- end .input-group -->
 									</div> <!-- end .form-group -->

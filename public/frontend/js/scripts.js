@@ -194,55 +194,8 @@
 	}
 	
 	/*==========  Contact Form  ==========*/
-	$('#contact-form').on('submit', function() {
-		$('#contact-form').find('.button').prop('disabled', true);
-		if (validateEmail($('#contact-email').val()) && $('#contact-email').val().length !== 0 && $('#contact-name').val().length !== 0 && $('#contact-message').val().length !== 0) {
-			var action = $(this).attr('action');
-			$.ajax({
-				type: "POST",
-				url : action,
-				data: {
-					contact_name: $('#contact-name').val(),
-					contact_email: $('#contact-email').val(),
-					contact_subject: $('#contact-subject').val(),
-					contact_message: $('#contact-message').val()
-				},
-				success: function() {
-					$('#contact-form').find('.button').prop('disabled', false);
-					swal({
-						title: 'Success!',
-						text: 'Thanks for contacting us!',
-						type: 'success',
-						html: true
-					});
-				},
-				error: function() {
-					$('#contact-form').find('.button').prop('disabled', false);
-					swal({
-						title: 'Error!',
-						text: 'Sorry, an error occurred.',
-						type: 'error',
-						html: true
-					});
-				}
-			});
-		} else if (!validateEmail($('#contact-email').val()) && $('#contact-email').val().length !== 0 && $('#contact-name').val().length !== 0 && $('#contact-message').val().length !== 0) {
-			$('#contact-form').find('.button').prop('disabled', false);
-			swal({
-				title: 'Oops!',
-				text: 'Please enter a valid email.',
-				html: true
-			});
-		} else {
-			$('#contact-form').find('.button').prop('disabled', false);
-			swal({
-				title: 'Oops!',
-				text: 'Please fill out all the fields.',
-				html: true
-			});
-		}
-		return false;
-	});
+// moved to the page 
+
 
 	/*==========  Newsletter Form  ==========*/
 	var $form = $('#mc-embedded-subscribe-form');

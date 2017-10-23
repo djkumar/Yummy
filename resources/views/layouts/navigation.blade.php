@@ -1,7 +1,7 @@
   <nav class="main-nav">
                     <ul class="list-unstyled ">
 
- <li> <a href="#">Brands</a></li>
+ <li> <a href="{{ url('/brands') }}">Brands</a></li>
                             <li> <a href="{{ url('/maps') }}">Maps</a></li>
                     @if (Auth::guest())
                            

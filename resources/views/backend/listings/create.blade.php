@@ -99,7 +99,7 @@
  
 								 
 
-				<form class="smart-form" role="form" method="POST" action="{{ url('admin/listings/store') }}" enctype="multipart/form-data">
+				<form class="smart-form" role="form" method="POST" action="{{ url('admin/listings/store') }}" >
 											<header>
 												Add Listings
 											</header>
@@ -121,7 +121,7 @@
         <section>
                                                     <label class="label">Logo </label>
                                                     <div class="input input-file">
-                                                        <span class="button"><input type="file" id="filelogo" name="listing_logo" onchange="this.parentNode.nextSibling.value = this.value">Browse</span><input type="text" placeholder="Include a file" readonly="">
+                                                        <span class="button"><input type="file" id="filelogo" name="listing_logo" onchange="this.parentNode.nextSibling.value = this.value">Browse</span>
                                                     </div>
                                                 </section>
                                                 
@@ -407,7 +407,7 @@
       function initMap() {
         var map = new google.maps.Map(document.getElementById('map'), {
           center: {lat: 35.9008896, lng: -104.4974195},
-          zoom: 5
+          zoom: 7
         });
         var card = document.getElementById('pac-card');
         var input = document.getElementById('pac-input');

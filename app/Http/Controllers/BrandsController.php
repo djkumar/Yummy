@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Brands;
-
+use App\Categories;
 class BrandsController extends Controller
 {
     /**
@@ -24,6 +24,12 @@ class BrandsController extends Controller
 
         //
         return view('backend.brands.index')->withBrands($brands);
+    }
+    
+    
+    public function userindex(){ 
+         $categories = Categories::where('status','1')->orderBy('created_at', 'desc')->get();
+        return view('brands-user')->withCategory($categories);
     }
 
     /**

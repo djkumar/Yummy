@@ -10,9 +10,13 @@ Class MapController extends Controller {
 public function index(){ 
 //  return view('map');
 
+
+    $position['latitude'] = '34.1095345';
+    $position['longitude'] = '-105.45';
+
  $listings = Listings::get();
 
- return view('map')->with('markers',$listings);
+ return view('map')->with('lists',$listings)->with('position', $position);
  
  
 }
@@ -28,9 +32,9 @@ public function show(){
 public function homesearch(Request $request){ 
 
 
-
 $circle_radius = 3959;
-$max_distance = 100;
+$max_distance = 50;
+$_distance = 50;
 
 
   $listings = DB::select(
@@ -45,10 +49,12 @@ $max_distance = 100;
                
             ');
             
+          $listings_all = Listings::get();
+
             
 $position = array('latitude'=>$request->latitude, 'longitude'=>$request->longitude);
 
- return view('map')->with('lists',$listings)->with('position', $position);
+ return view('map')->with('listings_all',$listings_all)->with('lists',$listings)->with('position', $position);
  
  
 }
@@ -58,7 +64,7 @@ public function ajaxsearch(Request $request){
 
 
 $circle_radius = 3959;
-$max_distance = 100;
+$max_distance = 50;
  
 
             

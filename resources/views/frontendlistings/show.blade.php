@@ -133,62 +133,48 @@
 							<h4>About Store</h4>
 								<p align="justify">{{ $listing->listing_desc }}</p>
 							</div> <!-- end .directory-single -->
+						
 							<div class="reviews">
-								<h4><a href="https://caworksite.com/Weedulu/index.php/home/allreviews/25">Totally&nbsp;0&nbsp;Review(s)</a></h4>
+							    	<h4><a href="#">Total&nbsp;&nbsp;Review(s)</a></h4>
+							    @forelse($listingreviews as $listingreview)
+							    
+							    <div class="review clearfix">
+											<div class="avatar"><img src="{{ url('public/uploads/avatar/'.$listingreview->user_avatar) }}" alt="avatar" width="100px" height="100px"></div>
+											<ul class="meta list-unstyled">
+											<li class="name">
+										 {{ $listingreview->first_name.' '.$listingreview->last_name }}  									    </li>
+										    											<li class="rating">
+									          <div class="add-review" style="margin-top:1px;">
+												<fieldset class="rating">
+													<input id="star5" name="rating10" value="5" type="radio" {{ old('ratings10',5)==$listingreview->ratings?'checked':''}}><label class="full" for="star5" title="Awesome - 5 stars"></label>
+													<input id="star4half" name="rating20" value="4.5" type="radio" {{ old('ratings10',4.5)==$listingreview->ratings?'checked':''}}><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
+													<input id="star4" name="rating30" value="4" type="radio"  {{ old('ratings10',4)==$listingreview->ratings?'checked':''}}><label class="full" for="star4" title="Pretty good - 4 stars"></label>
+													<input id="star3half" name="rating40" value="3.5"  type="radio"  {{ old('ratings10',3.5)==$listingreview->ratings?'checked':''}}><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
+													<input id="star3" name="rating50" value="3" type="radio"  {{ old('ratings10',3)==$listingreview->ratings?'checked':''}} ><label class="full" for="star3" title="Meh - 3 stars"></label>
+													<input id="star2half" name="rating60" value="2.5" type="radio"  {{ old('ratings10',2.5)==$listingreview->ratings?'checked':''}}><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
+													<input id="star2" name="rating70" value="2" type="radio"  {{ old('ratings10',2)==$listingreview->ratings?'checked':''}}><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
+													<input id="star1half" name="rating80" value="1.5" type="radio"  {{ old('ratings10',1.5)==$listingreview->ratings?'checked':''}} ><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
+													<input id="star1" name="rating90" value="1" type="radio"  {{ old('ratings10',1)==$listingreview->ratings?'checked':''}}><label class="full" for="star1" title="Sucks big time - 1 star"></label>
+													<input id="starhalf" name="rating100" value="0.5" type="radio" {{ old('ratings10',0.5)==$listingreview->ratings?'checked':''}}><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
+												</fieldset>{{ $listingreview->ratings }}
+											  </div>
+                                            </li>
+											<li> </li>
+											</ul>  <!-- end .meta -->
+										<div class="content">
+										<p> {{ $listingreview->review_message }} </p> 
+										</div> <!-- end .content -->
+										</div>
+								@empty
+							
+								@endforelse
 
 															
 							</div> <!-- end .reviews -->
 							
 
-							<div class="add-review">
-							
-								{{ @$user = auth()->user() }}
-								
-							 @if(@$user->id)
-							 	<h4>Rate and write a review.</h4>
-								<span id="review_errors" style="color:red";></span> 
-							<form name="review_form" action="#" method="post">  {{ csrf_field() }}
-									<div class="row">
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input placeholder="Your Name*" name="user_name" id="user_name" type="text">
-											</div> <!-- end .form-group -->
-										</div> <!-- end .col-sm-6 -->
-										<div class="col-sm-6">
-											<div class="form-group">
-												<input placeholder="Your@email.com*" name="user_email" id="user_email" type="text">
-											</div> <!-- end .form-group -->
-										</div> <!-- end .col-sm-6 -->
-									</div> <!-- end .row -->
-									<div class="form-group">
-										<textarea rows="3" placeholder="Your reviews here ..." name="message" id="message"></textarea>
-									</div> <!-- end .form-group -->
-									
-									<div class="form-group">
-									 										<select name="rating" id="rating" style="width:750px;height:45px;background-color: #fff;border:solid 1px #fff;padding:8px;border-radius: 9px;">
-										<option value="">Your Rating..</option>
-										                                        <option value="0.5">0.5&nbsp;Star(s)</option>
-                                                                                <option value="1">1&nbsp;Star(s)</option>
-                                                                                <option value="1.5">1.5&nbsp;Star(s)</option>
-                                                                                <option value="2">2&nbsp;Star(s)</option>
-                                                                                <option value="2.5">2.5&nbsp;Star(s)</option>
-                                                                                <option value="3">3&nbsp;Star(s)</option>
-                                                                                <option value="3.5">3.5&nbsp;Star(s)</option>
-                                                                                <option value="4">4&nbsp;Star(s)</option>
-                                                                                <option value="4.5">4.5&nbsp;Star(s)</option>
-                                                                                <option value="5">5&nbsp;Star(s)</option>
-                                        										</select>
-                                    </div>
-
-									<div class="clearfix">
-										<button id="reviewsubmit" class="button">Submit your reviews</button>
-									</div> <!-- end .clearfix -->
-
-								 </form> 
-								 @else 
-								 
-								 @endif
-							</div> <!-- end .add-review -->
+						@component('components.reviewform', ['listingid'=>$listing->id, 'userid'=>@$user->id]);
+						@endcomponent
 						
 						</div> <!-- end .col-md-8 -->
 						<div class="col-md-4">							
@@ -199,24 +185,9 @@
 									<div class="right">{{ $listing->start_time }}&nbsp;-&nbsp;{{ $listing->end_time }}</div>
 								</div> <!-- end .hours -->
 							</div> <!-- end .sidebar-widget -->
-							<div class="sidebar-widget">
-								<h5><img src="{{ url('public/dataimages/email.png') }}" alt="icon">Contact Us</h5>
-								<!-- <form action="scripts/contact.php" method="post" id="contact-form" class="contact-form"> -->
-									<div class="form-group">
-										<input id="contact-name" name="contact-name" placeholder="Your Name" required="" type="text">
-									</div> <!-- end .form-group -->
-									<div class="form-group">
-										<input id="contact-email" name="contact-email" placeholder="Your Email" required="" type="email">
-									</div> <!-- end .form-group -->
-									<div class="form-group">
-										<input id="contact-subject" name="contact-subject" placeholder="Subject" type="text">
-									</div> <!-- end .form-group -->
-									<div class="form-group">
-										<textarea name="contact-message" id="contact-message" required="" rows="3" placeholder="Your message here ..."></textarea>
-									</div> <!-- end .form-group -->
-									<div class="clearfix"><button class="button" id="contact-submit">Submit</button></div>
-								<!-- </form> -->
-							</div> <!-- end .sidebar-widget -->
+							
+							@component('components.contactform',['listingid'=>$listing->id]) 
+							@endcomponent
 							<div class="sidebar-widget">
 								<h5><img src="{{ url('public/dataimages/instagram.png') }}" alt="icon">Instagram</h5>
 								<div class="instagram">
@@ -238,7 +209,7 @@
 			<div class="inner">
 				<div class="container">
 				<div class="row text-center">
-				<div class="col-sm-6"><a href="#"><img src="https://caworksite.com/Weedulu/images/youtube-icon.png"> WEEDULU.TV ON YOUTUBE CHANNEL</a></div>
+				<div class="col-sm-6"><a href="#"><img src="{{ url('public/dataimages/youtube-icon.png') }}"> WEEDULU.TV ON YOUTUBE CHANNEL</a></div>
 				<div class="col-sm-6"><a href="#"><img src="{{ url('public/dataimages/therapeutic.png') }}"> THERAPEUTIC USES OF CANNIBIS</a></div>
 				</div>
 				
@@ -268,6 +239,7 @@
 
           position:new google.maps.LatLng({{ $listing->latitude }},{{ $listing->longitude }}),
           map: map,
+          icon: '{{ asset('frontend/images/custom_marker.png') }}', 
           anchorPoint: new google.maps.Point(0, -29)
         });
 
@@ -289,8 +261,8 @@
       /* Always set the map height explicitly to define the size of the div
        * element that contains the map. */
       #map {
-        height: 450px;
-        width: 600px;
+        height: 300px;
+        width: 100%;
       }
      
     </style>	
@@ -318,75 +290,7 @@ var memberid = "{{ @$user->id }}";
     }
 });
 
-$('#reviewsubmit').click(function()
-{
-  var memberid = "6";
-  
-    var name=document.getElementById('user_name').value;
- 	var email=document.getElementById('user_email').value;
-  	var msg=document.getElementById('message').value;
-  	var rating=document.getElementById('rating').value;
-
- if(memberid!="")
- { 
-  
- 	 $.ajax({
-  
- 	 url:'https://caworksite.com/Weedulu/index.php/home/review',
- 	 type:'POST',
- 	 data:{name:name,email:email,msg:msg,rating:rating,lid:25},
-
- 	 success:function(resp)
-  	 {
-  		swal({   
-  			title:"",   
-  			text: resp,   
-  			html: true 
-  		});
-
-        setTimeout(function(){ location.reload(); }, 2000); 
-  	 }
-
-  	});
-
- }
- else
- {
-    swal({
-    		title:"",
-    		text:"Please Log In To Add Your Review",
-    		html:true
-    	});
- }
-
-});
-
-$('#contact-submit').click(function(){
-
-var cname=document.getElementById('contact-name').value;
-var cemail=document.getElementById('contact-email').value;
-var csubject=document.getElementById('contact-subject').value;
-var cmsg=document.getElementById('contact-message').value;
-
-$.ajax({
-
-	url:'https://caworksite.com/Weedulu/index.php/home/contactus',
-    type:'post',
-    data:{cname:cname,cemail:cemail,csubject:csubject,cmsg:cmsg,lid:25},
-
-    success:function(response)
-    {
-       swal({   
-  			title:"",   
-  			text: response,   
-  			html: true 
-  		});
-
-        setTimeout(function(){ location.reload(); }, 2000);
-    }
-});
-
-});
+	
 </script>
 
 
